@@ -1,45 +1,77 @@
 pipeline {
-    agent any
-    stages {
-
-        stage('Container Manager'){
-        steps{
-		echo 'test1'
-                sh 'mkdir from-jenkins'
-                sh 'touch from-jenkins/test.txt'
-        }
-        }
+	agent any
+	stages {
+	stage('Container Manager'){
+		steps{
+		parallel (
+			"1": {
+				sh ("echo test2")
+			},
+			"2": {
+				sh ("echo test22")
+			}
+		)
+		}
+	}
 	stage('Proxy'){
-	steps{
-	parallel (
-	"1": {
-		sh ("echo test2")
-	},
-	"2": {
-		sh ("echo test22")
-	}
-	)
-	}
+		steps{
+		parallel (
+			"1": {
+				sh ("echo test2")
+			},
+			"2": {
+				sh ("echo test22")
+			}
+		)
+		}
 	}
 	stage('Database'){
-	steps{
-		echo 'test3'
-	}
+		steps{
+		parallel (
+			"1": {
+				sh ("echo test2")
+			},
+			"2": {
+				sh ("echo test22")
+			}
+		)
+		}
 	}
 	stage('Monitoring'){
-	steps{
-		echo 'test4'
-	}
+		steps{
+		parallel (
+			"1": {
+				sh ("echo test2")
+			},
+			"2": {
+				sh ("echo test22")
+			}
+		)
+		}
 	}
 	stage('Application'){
-	steps{
-		echo 'test5'	
-	}
+		steps{
+		parallel (
+			"1": {
+				sh ("echo test2")
+			},
+			"2": {
+				sh ("echo test22")
+			}
+		)
+		}
 	}
 	stage('Versioning'){
-	steps{
-		echo 'test6'
+		steps{
+		parallel (
+			"1": {
+				sh ("echo test2")
+			},
+			"2": {
+				sh ("echo test22")
+			}
+		)
+		}
 	}
 	}
-}
 }
