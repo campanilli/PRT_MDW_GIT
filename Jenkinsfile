@@ -71,7 +71,7 @@ pipeline {
 		steps{
 		parallel (
 			"GITHUB": {
-				sh ("cd /home/pi/CAMPANILLI/scripts; git config --global user.email 'thiago.campanilli@gmail.com'; bash PRT_MDW_GIT_0.0.1.sh")
+				sh ("cd /home/pi/CAMPANILLI/PRT_MDW_GIT; git config --global user.email 'thiago.campanilli@gmail.com'; bash PRT_MDW_GIT_0.0.1.sh")
 			}
 		)
 		}
