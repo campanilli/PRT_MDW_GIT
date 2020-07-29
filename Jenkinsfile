@@ -10,6 +10,7 @@ pipeline {
         }
         }
 	stage('Proxy'){
+	steps{
 	parallel (
 	"1": {
 		sh ("echo test2")
@@ -18,6 +19,7 @@ pipeline {
 		sh ("echo test22")
 	}
 	)
+	}
 	}
 	stage('Database'){
 	steps{
