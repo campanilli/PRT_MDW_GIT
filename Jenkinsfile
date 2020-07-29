@@ -10,19 +10,29 @@ pipeline {
                 }
         }
 	stage('Proxy'){
+	steps{
 		echo 'test2'
 	}
+	}
 	stage('Database'){
+	steps{
 		echo 'test3'
 	}
+	}
 	stage('Monitoring'){
+	steps{
 		echo 'test4'
 	}
+	}
 	stage('Application'){
+	steps{
 		echo 'test5'	
 	}
+	}
 	stage('Versioning'){
+	steps{
 		echo 'test6'
+	}
 	}
 }
 }
